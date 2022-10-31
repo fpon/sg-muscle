@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  // background: url(././images/noise.png) #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#global-container {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#canvas{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+#container {
+  position: relative;
+  transition: transform 0.5s, box-shadow 0.5s;
+}

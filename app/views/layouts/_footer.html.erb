@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="footer__inner">
+  <p class="footer__title">ページ一覧</p>
+    <nav>
+      <ul>
+        <li><%= link_to "ホーム", root_path %></li>
+        <li><%= link_to "ユーザー", users_path %></li>
+        <li><%= link_to "トレーニング", new_training_path %></li>
+        <li><a href="https://skygrid.co.jp/">Sky Grid</a>
+      </ul>  
+    </nav>
+    <div class="footer__logo">
+      <%= image_tag 'SG_logo.png'%>
+    </div>
+    <div class="copyright">
+      <div class="copyright__text">
+          <p>Copyright © Sky Grid Inc. All Rights Reserved.
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>

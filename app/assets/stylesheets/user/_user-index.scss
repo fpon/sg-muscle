@@ -1,0 +1,50 @@
+.user-index {
+  padding-top: 50px;
+  margin-bottom: 10%;
+
+  &__inner {
+    padding: 3%;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+    margin-top: 5%;
+  }
+
+  & li {
+    width: 30%;
+    list-style: none;
+    margin-bottom: 4%;
+    // background-color: rgba(240, 240, 240, 0.8);
+    // border-bottom: 1px solid #ccc;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      width: 20px;
+      right: 20px;
+      background-color: #111;
+      transition: all 0.2s linear;
+    }
+
+    &:hover::before {
+      right: 0;
+    }
+
+    & a {
+      display: block;
+    }
+  }
+}
+
+.user-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #111;
+}

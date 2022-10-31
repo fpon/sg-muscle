@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+      training:
+        day: "日付"
+        user_id: ”ユーザー"
+      training/benches:
+        weight: "ベンチプレスの重さ"
+        number: "ベンチプレスの回数"
+      training/squats:
+        weight: "スクワットの重さ"
+        number: "スクワットの回数"
+      training/arms:
+        weight: "アームカールの重さ"
+        number: "アームカールの回数"
+        

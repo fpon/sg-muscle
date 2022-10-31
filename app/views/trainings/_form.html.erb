@@ -1,0 +1,71 @@
+<%= form_with(model: @training, url: @trainings_path, data: { turbo: false }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object%>
+  
+  <div class="training-form">
+    <div class="training-form__inner">
+      <div class="training-day">
+        <%= f.label :day, "日付", style: "display: block", class: "training-day__title" %>
+        <%= f.date_field :day, class: "training-day__box" %>
+      </div>
+
+      <div class="training-user">
+        <p>メンバー選択</p>
+        <%= f.collection_select(:user_id, User.all, :id, :name,{include_blank: "--"} ) %> 
+      </div>
+
+      <div class="menu-title">ベンチプレス</div>
+      <div>
+        <%= f.fields_for :benches do |bench_form| %>
+          <%= render "bench_fields", f: bench_form %>
+          <div id="detail-association-insertion-point1"></div>
+        <% end %>
+        <div class="icon-box-plus">
+          <%= image_tag 'iconsplus.png',class: "icon-box__img" %>
+          <%= link_to_add_association "", f, :benches,
+                        class: "icon-box__link",
+                        data: {
+                        association_insertion_node: '#detail-association-insertion-point1',
+                        association_insertion_method: 'append'} %>
+        </div>
+      </div>
+
+      <div class="menu-title">スクワット</div>
+      <div>
+        <%= f.fields_for :squats do |squat_form| %>
+          <%= render "squat_fields", f: squat_form %>
+          <div id="detail-association-insertion-point2"></div>
+        <% end %>
+        <div class="icon-box-plus">
+          <%= image_tag 'iconsplus.png',class: "icon-box__img" %>
+          <%= link_to_add_association "", f, :squats,
+                        class: "icon-box__link",
+                        data: {
+                          association_insertion_node: '#detail-association-insertion-point2',
+                        association_insertion_method: 'append'} %>
+        </div>
+      </div>
+
+      <div class="menu-title">アームカール</div>
+      <div>
+        <%= f.fields_for :arms do |arm_form| %>
+          <%= render "arm_fields", f: arm_form %>
+          <div id="detail-association-insertion-point3"></div>
+        <% end %>
+        <div class="icon-box-plus">
+          <%= image_tag 'iconsplus.png',class: "icon-box__img" %>
+          <%= link_to_add_association "", f, :arms,
+                        class: "icon-box__link",
+                        data: {
+                          association_insertion_node: '#detail-association-insertion-point3',
+                        association_insertion_method: 'append'} %>
+        </div>
+      </div>
+
+      <div>
+        <div class="btn-box">
+            <%= f.submit "登録", class: "form-btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

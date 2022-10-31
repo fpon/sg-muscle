@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  // backdrop-filter: blur(20px);
+  z-index: 999;
+
+  &__img {
+    width: 80px;
+    height: 50px;
+  }
+
+  & img {
+    width: 80px;
+    height: 50px;
+  }
+}
+
+.mobile-btn {
+  position: fixed;
+  margin-top: 15px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  
+
+  & span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 20%;
+    background-color: black;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

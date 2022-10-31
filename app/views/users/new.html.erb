@@ -1,0 +1,22 @@
+<div class="user">
+  <div class="user__inner">
+    <div class="user__title">メンバー登録</div>
+    <div class="user-form">
+      <%= form_with(model: @user) do |f| %>
+        <%= render 'shared/error_messages',  object: f.object%>
+        <%= f.label :name, "名前", class: "user-form__title" %>
+        <%= f.text_field :name, class: "user-form__box" %>
+
+        <div class="btn-box">
+            <%= f.submit "登録", class: "form-btn" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="user-form__text">*登録後も詳細ページから変更できます</div>
+    <div class="btn-box-back">
+      <button class="back-btn">
+        <%= link_to "戻る", users_path %>
+      </button>
+    </div>
+  </div>
+</div>

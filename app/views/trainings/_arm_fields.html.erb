@@ -1,0 +1,15 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :weight, "重さ", class: "training-weight-title" %>
+    <%= f.number_field :weight, step: "0.1", class: "training-weight-box" %>
+
+    <%= f.label :number, "回数", class: "training-number-title"%>
+    <%= f.number_field :number, in: 1..1000, class: "training-number-box" %>
+  </div>
+  <div class="field">
+    <div class="icon-box">
+      <%= image_tag 'icons8-ゴミ.svg',class: "icon-box__img" %>
+      <%= link_to_remove_association "", f, class: "icon-box__link" %>
+    </div>
+  </div>
+</div>

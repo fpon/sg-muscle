@@ -1,0 +1,110 @@
+.mobile-menu {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  visibility: hidden;
+  width: 220px;
+  transition-delay: 0.8s;
+
+  & ul {
+    margin: 0;
+    padding-left: 15px;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+
+  }
+
+  & li {
+    margin-top: 8%;
+   font-size: 26px;
+   font-weight: 600;
+   list-style: none;
+   color: black;
+   opacity: 0;
+   transition: transform 0.5s, opacity 0.2s;
+   transform: translate3d(0, 0, -1500px);
+
+
+   &:not(:first-child) {
+    padding-left: 25px;
+  }
+
+   & a {
+     color: black;
+     text-decoration: none;
+     text-shadow: 1px 1px 0 rgb(193, 193, 193), 2px 2px 0 rgb(193, 193, 193), 3px 3px 0 rgb(193, 193, 193);
+   }
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    cursor: pointer;
+    z-index: 200;
+  }
+
+  &__img {
+    width: 120px;
+  }
+}
+
+.menu-open {
+  & #container {
+      transform: translate(-200px, 60px);
+      transition: transform 0.5s;
+      box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+  }
+  
+  & .mobile-btn {
+    & > span {
+        background-color: gray;
+
+        &:nth-child(1) {
+          transform: translateY(8px) rotate(135deg);
+          transition-delay: 200ms;
+          transition: transform 0.5s;
+        }
+        &:nth-child(2) {
+          transform:  translateX(-18px) scaleX(0);
+          transition-delay: 0s;
+          transition: transform 0.5s;
+        }
+        &:nth-child(3) {
+          transform: translateY(-8px) rotate(-135deg);
+          transition-delay: 400ms;
+          transition: transform 0.5s;
+        }
+    }
+  }
+  & .mobile-menu {
+
+    &__cover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+    & ul {
+      visibility: visible;
+
+      & li {
+        transform: none;
+        opacity: 1;
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            transition-delay: $i * 0.07s;
+          }
+        }
+      }
+    }
+  }
+}

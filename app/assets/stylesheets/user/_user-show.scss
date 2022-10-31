@@ -1,0 +1,160 @@
+.user-show {
+  padding-top: 50px;
+
+  &__inner {
+    padding: 3%;
+  }
+}
+
+.user-name {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+  margin-top: 5%;
+
+  &__act {
+    display: block;
+    position: relative;
+    margin-bottom: 5%;
+
+    &::after {
+      content: "";
+      background-color: gray;
+      height: 1px;
+      width: 100%;
+      bottom: -10px;
+      position: absolute;
+    }
+  }
+}
+
+
+//表ーーーーーーーーーー
+
+.training {
+  margin-top: 8%;
+  background-color: white;
+  width: 100%;
+  padding-bottom: 5%;
+  
+  &__inner {
+    padding: 3%;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+    padding: 0 10%;
+
+
+    &::before,  &::after{
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      top: 50%;
+      background-color: black;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+
+.record {
+  margin-top: 3%;
+  width: 100%;
+  position: relative;
+
+  &__day {
+    margin-top: 8%;
+    text-align: left;
+    font-size: 24px;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+  }
+
+
+  &__inner {
+    border: solid 1px black;
+    margin-top: 3%;
+    padding: 3%;
+  }
+}
+
+.r-block {
+  width: 100%;
+  &:last-child {
+    margin-bottom: 5%;
+  }
+
+  &__menu {
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+    position: relative;
+    float: left;
+    padding: 10px 5px 0 10px;
+  }
+
+  &__tb {
+    width: 100%;
+    margin-right: auto;
+    background-color: white;
+    border: solid 1px black;
+    border-collapse:collapse;
+    box-shadow: 0 10px 18px 2px  rgba(0, 0, 0, 0.2);
+
+
+    & thead {
+      background:#AD002D;
+	    font-weight: bold;
+	    color:#fff;
+
+      & th {
+        font-size: 12px;
+        color: white;
+  
+        &:first-child {
+          width: 20%;
+        }
+      }
+      
+    }
+    & tr {
+      &:nth-child(2n) {
+        background-color: rgb(230, 230, 230);
+      }
+    }
+  }
+}
+
+
+// トレーニングの記録がなかった時
+.nil-box {
+  position: relative;
+  background-color:rgba(201, 201, 201, 0.4);
+  margin-top: 8%;
+  height: 400px;
+  width: 100%;
+
+  & p {
+    position: relative;
+    text-align: center;
+    padding-top: 130px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+  }
+}

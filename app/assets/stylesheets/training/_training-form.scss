@@ -1,0 +1,114 @@
+.training-form {
+  background-color:rgba(201, 201, 201, 0.4);
+  margin-bottom: 5%;
+  margin-top: 5%;
+
+  &__inner {
+    padding: 3%;
+  }
+}
+
+.training-day {
+  margin-bottom: 8%;
+  width: 100%;
+  &__title {
+    margin: 2% 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+  }
+}
+
+.training-user {
+  margin-bottom: 15%;
+  & p {
+    margin: 2% 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+  }
+
+  & select {
+    width: 35%;
+    font-size: 20px;
+  }
+}
+
+.menu-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
+
+.training-weight-title {
+  display: block;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+}
+
+.training-weight-box {
+  display: block;
+  width: 80%;
+}
+
+.training-number-title {
+  display: block;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
+}
+
+.training-number-box {
+  display: block;
+  width: 80%;
+}
+
+.icon-box {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 65px 10px 0;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.icon-box-plus {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 5% 0 10% 0;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+  }
+}
+
+
+
+.nested-fields {
+  display: flex;
+  margin-top: 5%;
+}

@@ -1,0 +1,135 @@
+<div class="user-show">
+  <div class="user-show__inner">
+    <div class="user-name">
+       <%= "#{@user.name}さんのページ" %>
+    </div>
+    <div class=user-name__act>
+      <div class="btn-edit">
+        <button class="btn-edit__edit">
+          <%= link_to "編集", edit_user_path%>
+        </button>
+      </div>
+      <div class="btn-edit">
+        <button class="btn-edit__edit">
+          <%= link_to "削除", @user, data: { "turbo-method": :delete,
+                                            turbo_confirm: "ユーザーが削除されます。よろしいですか？" } %>
+        </button>
+      </div>
+    </div>
+
+    <% if @user.trainings.any? %>
+        <section class="training">
+          <div class="training__inner">
+            <div class="training__title">筋トレ記録</div>
+            <% @user.trainings.reverse_each do |t| %>
+              <div class="record">
+                <div class="record__day"><%= t.day %></div>
+                <div class="record__inner">
+                  <div class="r-block">
+                    <div class="r-block__menu">ベンチプレス</div>
+                    <table class="r-block__tb">
+                      <thead>
+                        <tr>
+                          <th>セット</th>
+                          <th>重さ</th>
+                          <th>回数</th>
+                        </tr>
+                      </thead>
+                      <% t.benches.each.with_index(1) do |bench, i| %>
+                        <tr>
+                          <td><%= p"#{i}"%></td>
+                          <td><%= bench.weight %></td>
+                          <td><%= bench.number %></td>
+                        </tr>
+                      <% end %>
+                    </table>
+                  </div>
+                  <div class="r-block">
+                    <div class="r-block__menu">スクワット</div>
+                    <table class="r-block__tb">
+                      <thead>
+                        <tr>
+                          <th>セット</th>
+                          <th>重さ</th>
+                          <th>回数</th>
+                        </tr>
+                      </thead>
+                      <% t.squats.each.with_index(1) do |squat, i| %>
+                        <tr>
+                          <td><%= p"#{i}"%></td>
+                          <td><%= squat.weight %></td>
+                          <td><%= squat.number %></td>
+                        </tr>
+                      <% end %>
+                    </table>
+                  </div>
+                  <div class="r-block">
+                    <div class="r-block__menu">アームカーム</div>
+                    <table class="r-block__tb">
+                      <thead>
+                        <tr>
+                          <th>セット</th>
+                          <th>重さ</th>
+                          <th>回数</th>
+                        </tr>
+                      </thead>
+                      <% t.arms.each.with_index(1) do |arm, i| %>
+                        <tr>
+                          <td><%= p"#{i}"%></td>
+                          <td><%= arm.weight %></td>
+                          <td><%= arm.number %></td>
+                        </tr>
+                      <% end %>
+                  </table>
+                  </div>
+                </div>
+                </div>
+                <div class="btn-edit">
+                  <button class="btn-edit__edit">
+                    <%= link_to "編集", edit_training_path(t)%>
+                  </button>
+                </div>
+                <div class="btn-edit">
+                  <button class="btn-edit__edit">
+                    <%= link_to "削除", t, data: { "turbo-method": :delete,
+                                                turbo_confirm: "本当に記録を削除しますか?" } %>
+                  </button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </section>
+    <% else %>
+      <div class="nil-box">
+         <p>記録がありません</p>
+          <div class="btn-box">
+            <button class="action-btn">
+              <%= link_to "作成", new_training_path %>
+            </button>
+          </div>
+      </div>
+    <% end %>
+    <div class="btn-box-back">
+      <button class="back-btn">
+        <%= link_to "戻る", users_path %>
+      </button>
+    </div>
+  </div>
+</div>
+
+<nav class="mobile-menu">
+  <ul>
+    <li>
+      <%= image_tag "SG_logo.png" ,class: "mobile-menu__img"%>
+    </li>
+    <li>
+      <%= link_to "ホーム", root_path %>
+    </li>
+    <li>
+      <%= link_to "ユーザー", users_path %>
+    </li>
+    <li>
+      <%= link_to "トレーニング", new_training_path %>
+    </li>
+  </ul>
+</nav>

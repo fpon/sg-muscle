@@ -1,0 +1,15 @@
+<div class="user-index">
+  <div class="user-index__inner">
+    <div class="user-index__title">メンバー</div>
+    <% @users.reverse_each do |user| %>
+        <li>
+          <%= link_to user.name, user, class: "user-link" %>
+        </li>
+    <% end %>
+    <div class="btn-box">
+      <button class="action-btn">
+        <%= link_to "メンバー登録", new_user_path %>
+      </button>
+    </div>
+  </div>
+</div>
