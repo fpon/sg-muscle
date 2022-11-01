@@ -8,6 +8,9 @@ class HeroSlider {
       grabCursor: false, //grab時のカーソル
       loop: true,
       effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       centeredSliders: true, //slidersを中央にする
       slidesPerView: 1, //画面内での画像の表示枚数
       speed: 1500,
