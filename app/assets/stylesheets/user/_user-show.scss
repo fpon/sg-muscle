@@ -1,17 +1,31 @@
-.user-show {
-  padding-top: 50px;
-
-  &__inner {
-    padding: 3%;
-  }
-}
-
-.user-name {
+.page-title {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
   margin-top: 5%;
+}
+
+.content-inner  {
+  padding: 3%;
+}
+
+.content-cover {
+  background-color:rgba(200, 200, 200, 0.4);
+}
+
+//------ここまでがリファクタリング---------//
+
+.user-show {
+  padding-top: 50px;
+
+  &__inner {
+    @extend .content-inner;
+  }
+}
+
+.user-name {
+  @extend .page-title;
 
   &__act {
     display: block;
@@ -39,7 +53,7 @@
   padding-bottom: 5%;
   
   &__inner {
-    padding: 3%;
+    @extend .content-inner;
   }
 
   &__title {
@@ -86,9 +100,9 @@
 
 
   &__inner {
+    @extend .content-inner;
     border: solid 1px black;
     margin-top: 3%;
-    padding: 3%;
   }
 }
 
@@ -99,11 +113,8 @@
   }
 
   &__menu {
-    margin-top: 5%;
+    @extend .page-title;
     font-size: 20px;
-    font-weight: 700;
-    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
-    position: relative;
     float: left;
     padding: 10px 5px 0 10px;
   }
@@ -143,18 +154,14 @@
 
 // トレーニングの記録がなかった時
 .nil-box {
+  @extend .content-cover;
   position: relative;
-  background-color:rgba(201, 201, 201, 0.4);
   margin-top: 8%;
   height: 400px;
   width: 100%;
 
   & p {
-    position: relative;
-    text-align: center;
+    @extend .page-title;
     padding-top: 130px;
-    font-size: 2rem;
-    font-weight: 700;
-    text-shadow: 1px 1px 0 #c9c9c9, 2px 2px 0 #c9c9c9, 3px 3px 0 #c9c9c9;
   }
 }
