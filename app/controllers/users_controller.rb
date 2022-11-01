@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path
     else
-      redirect_to 'new', status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 
