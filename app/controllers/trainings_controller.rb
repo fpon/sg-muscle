@@ -1,5 +1,5 @@
 class TrainingsController < ApplicationController
-  # before_action :set_training, only: [:show, :edit, :update, :destroy]
+  before_action :set_training, only: [:show, :edit, :update]
 
   def new
     @training = Training.new
@@ -18,15 +18,12 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training = Training.find(params[:id])
   end
 
   def edit
-    @training = Training.find(params[:id])
   end
 
   def update
-    @training = Training.find(params[:id])
     if @training.update(training_params)
       redirect_to user_path(@training.user_id)
     else

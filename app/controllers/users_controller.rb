@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all.order(id: :desc)
@@ -13,21 +14,17 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path
     else
-      render 'new', status: :unprocessable_entity
+      redirect_to 'new', status: :unprocessable_entity
     end
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
-
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user
     else
@@ -44,5 +41,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
