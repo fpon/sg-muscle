@@ -33,6 +33,7 @@
                           <th>セット</th>
                           <th>重さ</th>
                           <th>回数</th>
+                          <th>RM</th>
                         </tr>
                       </thead>
                       <% t.benches.each.with_index(1) do |bench, i| %>
@@ -40,6 +41,7 @@
                           <td><%= p"#{i}"%></td>
                           <td><%= bench.weight %></td>
                           <td><%= bench.number %></td>
+                          <td><%= bench.weight * bench.number / 40 + bench.weight %> </td>
                         </tr>
                       <% end %>
                     </table>
@@ -52,6 +54,7 @@
                           <th>セット</th>
                           <th>重さ</th>
                           <th>回数</th>
+                           <th>RM</th>
                         </tr>
                       </thead>
                       <% t.squats.each.with_index(1) do |squat, i| %>
@@ -59,6 +62,7 @@
                           <td><%= p"#{i}"%></td>
                           <td><%= squat.weight %></td>
                           <td><%= squat.number %></td>
+                          <td><%= squat.weight * squat.number / 40 + squat.weight %> </td>
                         </tr>
                       <% end %>
                     </table>
@@ -71,6 +75,7 @@
                           <th>セット</th>
                           <th>重さ</th>
                           <th>回数</th>
+                           <th>RM</th>
                         </tr>
                       </thead>
                       <% t.arms.each.with_index(1) do |arm, i| %>
@@ -78,6 +83,7 @@
                           <td><%= p"#{i}"%></td>
                           <td><%= arm.weight %></td>
                           <td><%= arm.number %></td>
+                          <td><%= arm.weight * arm.number / 40 + arm.weight %> </td>
                         </tr>
                       <% end %>
                   </table>

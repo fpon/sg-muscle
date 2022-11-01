@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(id: :desc)
+    # @users = User.all
+    # @users = @users.page(params[:page]).per(30)
+
+    # @trainings = Kaminari.paginate_array(@trainings).page(params[:page])
   end
 
   def new
