@@ -1,13 +1,19 @@
 class TrainingsController < ApplicationController
   before_action :set_training, only: [:show, :edit, :update]
 
+  def show
+  end
+
   def new
     @training = Training.new
     @training.benches.build
     @training.squats.build
     @training.arms.build
   end
-  
+
+  def edit
+  end
+
   def create
     @training = Training.new(training_params)
     if @training.save
@@ -15,12 +21,6 @@ class TrainingsController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   def update
@@ -40,8 +40,8 @@ class TrainingsController < ApplicationController
 
   def training_params
     params.require(:training).permit(:id, :user_id, :day, benches_attributes: [:id, :weight, :number, :training_id, :_destroy],
-                                                  squats_attributes: [:id, :weight, :number, :training_id, :_destroy],
-                                                  arms_attributes: [:id, :weight, :number,:training_id, :_destroy])
+                                                          squats_attributes: [:id, :weight, :number, :training_id, :_destroy],
+                                                          arms_attributes: [:id, :weight, :number, :training_id, :_destroy])
   end
 
   def set_training

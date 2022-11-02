@@ -9,8 +9,14 @@ class UsersController < ApplicationController
     # @trainings = Kaminari.paginate_array(@trainings).page(params[:page])
   end
 
+  def show
+  end
+
   def new
     @user = User.new
+  end
+
+  def edit
   end
 
   def create
@@ -20,12 +26,6 @@ class UsersController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   def update
